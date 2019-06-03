@@ -10,34 +10,29 @@ public class ServiceDAOImpl implements IServiceDAO {
 	ITeamDAO td  = new TeamDAOImpl();
 	@Override
 	public void Save(Team t) {
-		// TODO Auto-generated method stub
-		td.save(t);
+		td.DaoFactory.save(t);
 	}
 
 	@Override
 	public void Delete(int uid) {
-		// TODO Auto-generated method stub
-		td.delete(uid);
+		td.DaoFactory.delete(uid); 
 	}
 
 	@Override
 	public void Update(Team t) {
-		// TODO Auto-generated method stub
-		td.update(t);
+		td.DaoFactory.update(t); 
 	}
 
 	@Override
 	public Team FindOne(int uid) {
-		// TODO Auto-generated method stub
-		Team t = td.find(uid);
-		return t;
+		Team tm = td.DaoFactory.find(uid); 
+		return tm;
 	}
 
 	@Override
 	public List<Team> FindAll() {
-		// TODO Auto-generated method stub
-		List<Team> list= td.findAll();
-		return list;
+		List<Team> tm = td.DaoFactory.findAll(uid); 
+		return tm.size != 0:tm.get(0)?null;
 	}
 
 }
